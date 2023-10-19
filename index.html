@@ -4,33 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cesar</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
-</head>
+    <link rel="stylesheet" href="css/style.css">
 <body>
     <div class="container">
-        <h1>Cifrado Cesar con JS</h1>
+        <h2 src="#h1" class="border">Cifrados Polialfabeticos</h2>
+        <br>
+        <br>
+        <br>
         <hr>
-    <div class="row">
-        <div class="col-md12">
-            <div class="form-group">
-                <label for="texto">Texto a Cifrar:</label>
-                <textarea type="text" name="texto" id="texto" class="form-control"></textarea>
+        <div class="row">
+            <div class="col-md12">
+                <div class="form-group">
+                    <br>
+                    <br>
+                    <label for="texto" id="txt1">Texto a cifrar:</label>
+                    <br>
+                    <br>
+                 
+                    <textarea type="text" name="texto" id="texto" class="form-control"></textarea>
+                </div>
             </div>
         </div>
-        <div class="col-md12">
-            <div class="form-group">
-                <label for="desplazamiento">Desplazamiento</label>
-                <input type="range" min="1" max="25" step="1" value="1" name="desplazamiento" id="desplazamiento" class="form-control">
+        <br>
+        <a href="#"><input type="button" class="btn-info" value="Cifrado Cesar"></a> 
+        <a href="#"><input type="button" class="btn-info" value="Descifrado Cesar" onclick="descifrar()"></a>
+        <a href="#"><input type="button" class="btn-info" value="Cifrado Viggenere" onclick="reiniciar()"></a>
+        <a href="#"><input type="button" class="btn-info" value="Reiniciar" onclick="reiniciar()"></a>
+        <br><br> 
+        <a href="#"><input type="button" class="btn-info" value="Copiar" onclick="colocar()" id="copiar"></a>
+        <div class="row">
+            <div class="col-md12">
+                <div class="form-group">
+                    <br>
+                    <label for="desplazamiento" id="labelDesplazamiento" style="display: none;">Desplazamiento</label>
+                    <input type="range" min="1" max="25" step="1" value="1" name="desplazamiento" id="desplazamiento" class="form-control" style="display: none;">
+                </div>
             </div>
         </div>
-        <div class="col-md12">
+        <div class="row">
             <div class="form-group">
-                <label for="texto cifrado">Texto cifrado:</label>
-                <textarea type="text" name="cifrado" id="cifrado" class="form-control" disabled="disable"></textarea>
+                <label  for="textoCifrar" id="labeltextoCifrar" style="display: none;">Ingrese el texto a cifrar</label>
+                <br>
+                <textarea class="form-control" type="text" id="txt" onpaste="return false;" ondrop="return false;" style="display: none;"></textarea>
+                <br>
+                <label for="clave" id="labelClave" style="display: none;">Ingrese la clave</label>
+                <br>
+                <input class="form-control" type="text" name="posicionamiento" id="txtClave" onpaste="return false;" ondrop="return false;" style="display: none;">
+                <textarea type="text" name="cifrado" id="cifrado" class="form-control" disabled="disable" style="display: none;"></textarea>
+                <br>
+                <textarea class="form-control" id="res" onpaste="return false;" ondrop="return false;" style="display: none;"></textarea>
+                <br>
+                <a href="#"><input type="button" class="btn-info" value="cifrar" onclick="longitudCifrar()" id="btcifrar" style="display: none;"></a>
+                <br>
+                <a href="#"><input type="button" class="btn-info" value="descifrar" onclick="longitudDescifrar()" id="btdescifrar" style="display: none;"></a>
+                <br>
+                <a href="#"><input type="button" class="btn-info" value="copiar" onclick="colocar2()" id="copiar2" style="display: none;"></a>
             </div>
         </div>
-    </div>
     </div>
     <script src="./js/cesar.js"></script>
+    <script src="./js/viggenere.js"></script>
+
+    <br><br><br>
 </body>
 </html>
